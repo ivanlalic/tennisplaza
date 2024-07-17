@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Jugadores - Categoria "C" - 2024</title>
+    <title>Liga Plaza Tenis 2024</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,6 +19,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
         }
         .header {
             display: flex;
@@ -35,6 +36,17 @@
             text-align: center;
             color: #333;
             margin: 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
         }
         table {
             border-collapse: collapse;
@@ -58,15 +70,49 @@
             height: 24px;
             vertical-align: middle;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <img src="https://atleticodelrosario.club/wp-content/themes/plaza-jewell/images/logo-plaza-jewell-4.svg" alt="Plaza Jewell Logo" class="logo">
-            <h1>Lista de Jugadores - Categoria "C" - 2024</h1>
+            <h1>Liga Plaza Tenis 2024</h1>
         </div>
-<table>
+        
+        <div id="categorySelection">
+            <button onclick="showCategory('B')" class="button">Categoria B</button>
+            <button onclick="showCategory('C')" class="button">Categoría C</button>
+        </div>
+        
+        <div id="categoryB" class="hidden">
+            <h2>Lista de Jugadores - Categoria "B" - 2024</h2>
+            <table>
+                <tr>
+                    <th>Jugador</th>
+                    <th>Nombre y Apellido</th>
+                    <th>WhatsApp</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ejemplo Uno</td>
+                    <td><a href="https://wa.me/5493411234567" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ejemplo Dos</td>
+                    <td><a href="https://wa.me/5493412345678" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"></a></td>
+                </tr>
+                
+            </table>
+            <button onclick="showCategorySelection()" class="button">Volver</button>
+        </div>
+        
+        <div id="categoryC" class="hidden">
+            <h2>Lista de Jugadores - Categoria "C" - 2024</h2>
+            <table>
     <tr>
         <th>Jugador</th>
         <th>Nombre y Apellido</th>
@@ -173,6 +219,21 @@
         <td><a href="https://wa.me/5493416011367" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"></a></td>
     </tr>
 </table>
+            <button onclick="showCategorySelection()" class="button">Volver</button>
+        </div>
     </div>
+
+    <script>
+        function showCategory(category) {
+            document.getElementById('categorySelection').classList.add('hidden');
+            document.getElementById('category' + category).classList.remove('hidden');
+        }
+
+        function showCategorySelection() {
+            document.getElementById('categoryB').classList.add('hidden');
+            document.getElementById('categoryC').classList.add('hidden');
+            document.getElementById('categorySelection').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
